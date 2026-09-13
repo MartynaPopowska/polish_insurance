@@ -1,0 +1,8 @@
+# Raw data files downloaded from KNF/EIOPA/GUS - not included in the repo,
+# see data/README.md for where to download them
+data/*
+!data/README.md
+
+# common junk
+*.tmp
+.DS_Store
