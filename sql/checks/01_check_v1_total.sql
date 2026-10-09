@@ -1,9 +1,16 @@
--- Control check: sum of classes 1-5 should match KNF's Total row
--- (small difference of 1-2 is expected due to KNF rounding to thousands PLN)
--- Note: works for premium only, NOT for number_of_contracts
--- (Class 5 contracts are mostly riders attached to other classes)
+-- Control check: for each year, sum of classes 1-5 should match KNF's Total row,
+-- separately for individual and group premium.
+-- Tiny differences (< 0.01 thousand PLN) in 2021-2025 individual premium come from
+-- decimal truncation when the CSV was first exported from Excel.
+-- Note: works for premium only, NOT for contract counts
+-- (one contract can appear in several classes, e.g. Class 5 riders).
 
 SELECT
-    SUM(CASE WHEN class_number IS NOT NULL THEN gross_written_premium ELSE 0 END) AS sum_of_classes,
-    SUM(CASE WHEN class_number IS NULL THEN gross_written_premium ELSE 0 END) AS total_from_knf
-FROM stg_v1_life_premiums;
+	report_year,
+    SUM(CASE WHEN class_number IS NOT NULL THEN premium_individual ELSE 0 END) AS sum_classes_individual,
+	SUM(CASE WHEN class_number IS NULL THEN premium_individual ELSE 0 END) AS total_individual,
+	SUM(CASE WHEN class_number IS NOT NULL THEN premium_group ELSE 0 END) AS sum_classes_group,
+    SUM(CASE WHEN class_number IS NULL THEN premium_group ELSE 0 END) AS total_group
+FROM stg_v1_life_premiums
+GROUP BY report_year
+ORDER BY report_year;
