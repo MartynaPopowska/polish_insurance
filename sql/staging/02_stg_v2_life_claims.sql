@@ -1,3 +1,6 @@
+
+
+
 -- Staging table for KNF table V.2 (life insurance) - number of payments and gross claims paid by class
 -- Raw data copied 1:1 from the source, before any transformation.
 -- Total row is kept as a control row with class_number = NULL.

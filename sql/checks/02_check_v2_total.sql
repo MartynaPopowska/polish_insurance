@@ -1,3 +1,5 @@
+
+
 -- Control check: for each year, sum of classes 1-5 should match KNF's Total row,
 -- separately for periodical and single claims paid.
 -- Unlike contract counts in V.1, payment counts ARE additive here
