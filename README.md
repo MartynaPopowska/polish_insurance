@@ -1,4 +1,4 @@
-# Polish Insurance Market Analysis (2020-2026)
+# Polish Insurance Market Analysis (2020-2025)
 
 **Goal:** look at data from the Polish financial regulator (KNF) and figure
 out which insurance segments are growing the most while also staying
