@@ -52,5 +52,8 @@ FactClaims (YearKey, SegmentKey, GrossClaimsPaid, SourceTable)
 Joining premiums and claims
 Use a LEFT JOIN from FactPremiums to FactClaims on (YearKey, SegmentKey), not an INNER JOIN, so missing claims data stays visible as NULL instead of silently dropping the row.
 
-Known open item
-The non-life claims-by-class table (equivalent of V.2 for life insurance) has not been located/confirmed yet - to be resolved in Stage 3.
+Sources by fact table
+FactPremiums: V.1 (life), V.8 (non-life)
+FactClaims: V.2 (life), V.8 (non-life)
+Reinsurance accepted (V.8) has no class breakdown and is excluded from
+  class-level facts (kept in staging for control checks only).
