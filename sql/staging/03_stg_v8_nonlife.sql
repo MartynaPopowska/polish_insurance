@@ -1,3 +1,4 @@
+
 -- Staging table for KNF table V.8 (non-life insurance) - gross written premium and
 -- gross claims paid by class, split by where the business is written (Poland / abroad).
 -- Raw data copied 1:1 from the source, before any transformation.

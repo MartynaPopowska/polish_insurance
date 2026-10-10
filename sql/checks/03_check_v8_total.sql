@@ -1,3 +1,4 @@
+
 -- Control check: for each year, Classes 1-18 + reinsurance accepted should match
 -- KNF's Total row, for premium and claims paid in Poland.
 SELECT 
