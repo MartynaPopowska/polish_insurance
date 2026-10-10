@@ -7,7 +7,7 @@ and Power BI properly, not just copy-paste a finished solution.
 
 ## Status
 
-I'm at the very start. Here's where things stand:
+Here's where things stand:
 
 - [x] Step 1 - find and check the KNF data
 - [x] Step 2 - design the database structure (star schema)
